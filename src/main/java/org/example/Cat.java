@@ -8,6 +8,18 @@ public class Cat {
     private int idMother;
     private int idFather;
 
+    private int idChildren;
+    //private ArrayList<String> children;
+    public Cat() {
+        this.id = id;
+        this.name = name;
+        this.color = color;
+        this.age = age;
+        this.idMother = 0;
+        this.idFather = 0;
+        this.idChildren = 0;
+    }
+
     public Cat(int id, String name, String color, int age, int idMother, int idFather) {
         this.id = id;
         this.name = name;
@@ -15,8 +27,19 @@ public class Cat {
         this.age = age;
         this.idMother = idMother;
         this.idFather = idFather;
+        this.idChildren = 0;
     }
 
+    public Cat(int id, String name, String color, int age, int idMother, int idFather, int idChildren) {
+        this.id = id;
+        this.name = name;
+        this.color = color;
+        this.age = age;
+        this.idMother = idMother;
+        this.idFather = idFather;
+        //this.children = new ArrayList<>();
+        this.idChildren = idChildren;
+    }
     public void setName(String name) {
         this.name = name;
     }
@@ -25,9 +48,12 @@ public class Cat {
         this.age = age;
     }
 
+    public void setIdMother(int idMother, int idFather) {this.idMother = idMother;}
+
     @Override
     public String toString() {
-        return "имя кота: " + this.name + "\nокрас кота: " + this.color + "\nколичество полных лет: " + this.age + "\n" + "Мать: " + this.idMother + "\n" + "Отец: " + this.idFather + "\n";
+
+        return "имя кота: " + this.name + "\nокрас кота: " + this.color + "\nколичество полных лет: " + this.age + "\n" + "Мать: " + this.idMother + "\n" + "Отец: " + this.idFather + "\n" + idChildren + "\n";
     }
 
     @Override
@@ -54,45 +80,3 @@ public class Cat {
         return id;
     }
 }
-
-
-
-
-//  добавить в main
-/*
-package org.example;
-
-import java.util.HashSet;
-import java.util.Set;
-
-public class Main {
-    private static Set<Cat> catSet;
-
-    public static void addCat(int id, String name, String color, int age) {
-        Cat cat = new Cat(id, name, color, age);
-        catSet.add(cat);
-    }
-
-    public static void main(String[] args) {
-        catSet = new HashSet<>();
-        addCat(1, "Barsik", "Black", 3);
-        addCat(2, "Filya", "black-white", 1);
-        addCat(1, "Barsik", "Black", 3);
-        addCat(1, "Barsik", "Black", 4);
-
-        for (Cat cat1 : catSet) {
-            System.out.println(cat1);
-            for (Cat cat2 : catSet) {
-                System.out.println(cat2);
-                System.out.println(cat1.equals(cat2));
-                System.out.println("----");
-            }
-            System.out.println("------------------------------------------------------");
-        }
-
-//        for (Cat cat1 : catSet) {
-//            System.out.println(cat1.hashCode());
-//        }
-    }
-
- */
